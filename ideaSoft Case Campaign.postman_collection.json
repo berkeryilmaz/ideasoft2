@@ -1,0 +1,764 @@
+{
+	"info": {
+		"_postman_id": "149db51f-a6e1-4f4a-9d97-3cbdf89b5d00",
+		"name": "ideaSoft Case Campaign",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7011103"
+	},
+	"item": [
+		{
+			"name": "campaigns",
+			"item": [
+				{
+					"name": "campaigns",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"1000TL alışverişe %10 indirim.\",\n    \"description\": \"Toplam 1000TL ve üzerinde alışveriş yapan bir müşteri, siparişin tamamından %10 indirim kazanır.\",\n    \"start_at\": \"2025-01-05 00:00:00\",\n    \"end_at\": \"2025-02-05 23:59:59\",\n    \"discount_percent\": 10.0,\n    \"discount_amount\": 0.0,\n    \"campaign_type\": \"basic_percent\",\n    \"rules\": [\n        {\n            \"scope\": \"order\",\n            \"attribute\": \"total\",\n            \"operator\": \">=\",\n            \"value\": 1000\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/campaigns",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"campaigns"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "campaigns",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"1000TL alışverişe %10 indirim.\",\n    \"description\": \"Toplam 1000TL ve üzerinde alışveriş yapan bir müşteri, siparişin tamamından %10 indirim kazanır.\",\n    \"start_at\": \"2025-01-05 00:00:00\",\n    \"end_at\": \"2025-02-05 23:59:59\",\n    \"discount_percent\": 10.0,\n    \"discount_amount\": 0.0,\n    \"campaign_type\": \"basic_percent\",\n    \"rules\": [\n        {\n            \"scope\": \"order\",\n            \"attribute\": \"total\",\n            \"operator\": \">=\",\n            \"value\": 1000\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/campaigns",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 15:31:16 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"1000TL alışverişe %10 indirim.\",\n    \"description\": \"Toplam 1000TL ve üzerinde alışveriş yapan bir müşteri, siparişin tamamından %10 indirim kazanır.\",\n    \"start_at\": \"2025-01-05 00:00:00\",\n    \"end_at\": \"2025-02-05 23:59:59\",\n    \"discount_percent\": 10,\n    \"discount_amount\": 0,\n    \"campaign_type\": \"basic_percent\",\n    \"updated_at\": \"2025-01-29T15:31:16.000000Z\",\n    \"created_at\": \"2025-01-29T15:31:16.000000Z\",\n    \"id\": 3,\n    \"campaign_rules\": [\n        {\n            \"id\": 4,\n            \"campaign_id\": 3,\n            \"scope\": \"order\",\n            \"attribute\": \"total\",\n            \"operator\": \">=\",\n            \"value\": 1000,\n            \"created_at\": \"2025-01-29T15:31:16.000000Z\",\n            \"updated_at\": \"2025-01-29T15:31:16.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "campaigns",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/campaigns/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"campaigns",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "campaigns",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/campaigns/4",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"campaigns",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 12:08:42 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "true"
+						}
+					]
+				},
+				{
+					"name": "campaigns",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/campaigns/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"campaigns",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "campaigns",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/campaigns/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"campaigns",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 15:32:03 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Hırdavat Kategorisinden 2 veya daha fazla ürün al, en ucuzu %20 indirimli.\",\n    \"description\": \"1 ID'li kategoriden iki veya daha fazla ürün satın alındığında, en ucuz ürüne %20 indirim yapılır.\",\n    \"start_at\": \"2025-01-05 00:00:00\",\n    \"end_at\": \"2025-02-05 23:59:59\",\n    \"discount_percent\": 20,\n    \"discount_amount\": 0,\n    \"campaign_type\": \"buy_from_x_get_y_perscent_discount\",\n    \"created_at\": \"2025-01-29T15:24:34.000000Z\",\n    \"updated_at\": \"2025-01-29T15:24:34.000000Z\",\n    \"campaign_rules\": [\n        {\n            \"id\": 1,\n            \"campaign_id\": 1,\n            \"scope\": \"category\",\n            \"attribute\": \"quantity\",\n            \"operator\": \">=\",\n            \"value\": 2,\n            \"created_at\": \"2025-01-29T15:24:34.000000Z\",\n            \"updated_at\": \"2025-01-29T15:24:34.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "campaigns(all)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/campaigns",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"campaigns"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "campaigns(all)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/campaigns",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"campaigns"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 15:32:14 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Hırdavat Kategorisinden 2 veya daha fazla ürün al, en ucuzu %20 indirimli.\",\n        \"description\": \"1 ID'li kategoriden iki veya daha fazla ürün satın alındığında, en ucuz ürüne %20 indirim yapılır.\",\n        \"start_at\": \"2025-01-05 00:00:00\",\n        \"end_at\": \"2025-02-05 23:59:59\",\n        \"discount_percent\": 20,\n        \"discount_amount\": 0,\n        \"campaign_type\": \"buy_from_x_get_y_perscent_discount\",\n        \"created_at\": \"2025-01-29T15:24:34.000000Z\",\n        \"updated_at\": \"2025-01-29T15:24:34.000000Z\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Elektrik & Aydınlatma Kategorisinden 6 ürün al, 1 tanesi bizden.\",\n        \"description\": \"2 ID'li kategoriye ait bir üründen 6 adet satın alındığında, bir tanesi ücretsiz olarak verilir.\",\n        \"start_at\": \"2025-01-05 00:00:00\",\n        \"end_at\": \"2025-02-05 23:59:59\",\n        \"discount_percent\": 0,\n        \"discount_amount\": 0,\n        \"campaign_type\": \"buy_x_get_y\",\n        \"created_at\": \"2025-01-29T15:30:00.000000Z\",\n        \"updated_at\": \"2025-01-29T15:30:00.000000Z\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"1000TL alışverişe %10 indirim.\",\n        \"description\": \"Toplam 1000TL ve üzerinde alışveriş yapan bir müşteri, siparişin tamamından %10 indirim kazanır.\",\n        \"start_at\": \"2025-01-05 00:00:00\",\n        \"end_at\": \"2025-02-05 23:59:59\",\n        \"discount_percent\": 10,\n        \"discount_amount\": 0,\n        \"campaign_type\": \"basic_percent\",\n        \"created_at\": \"2025-01-29T15:31:16.000000Z\",\n        \"updated_at\": \"2025-01-29T15:31:16.000000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getActiveCampaigns",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/campaigns/getActiveCampaigns",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"campaigns",
+								"getActiveCampaigns"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getActiveCampaigns",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/campaigns/getActiveCampaigns",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"campaigns",
+										"getActiveCampaigns"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 15:32:37 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Hırdavat Kategorisinden 2 veya daha fazla ürün al, en ucuzu %20 indirimli.\",\n        \"description\": \"1 ID'li kategoriden iki veya daha fazla ürün satın alındığında, en ucuz ürüne %20 indirim yapılır.\",\n        \"start_at\": \"2025-01-05 00:00:00\",\n        \"end_at\": \"2025-02-05 23:59:59\",\n        \"discount_percent\": 20,\n        \"discount_amount\": 0,\n        \"campaign_type\": \"buy_from_x_get_y_perscent_discount\",\n        \"created_at\": \"2025-01-29T15:24:34.000000Z\",\n        \"updated_at\": \"2025-01-29T15:24:34.000000Z\",\n        \"campaign_rules\": [\n            {\n                \"id\": 1,\n                \"campaign_id\": 1,\n                \"scope\": \"category\",\n                \"attribute\": \"quantity\",\n                \"operator\": \">=\",\n                \"value\": 2,\n                \"created_at\": \"2025-01-29T15:24:34.000000Z\",\n                \"updated_at\": \"2025-01-29T15:24:34.000000Z\"\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Elektrik & Aydınlatma Kategorisinden 6 ürün al, 1 tanesi bizden.\",\n        \"description\": \"2 ID'li kategoriye ait bir üründen 6 adet satın alındığında, bir tanesi ücretsiz olarak verilir.\",\n        \"start_at\": \"2025-01-05 00:00:00\",\n        \"end_at\": \"2025-02-05 23:59:59\",\n        \"discount_percent\": 0,\n        \"discount_amount\": 0,\n        \"campaign_type\": \"buy_x_get_y\",\n        \"created_at\": \"2025-01-29T15:30:00.000000Z\",\n        \"updated_at\": \"2025-01-29T15:30:00.000000Z\",\n        \"campaign_rules\": [\n            {\n                \"id\": 2,\n                \"campaign_id\": 2,\n                \"scope\": \"product\",\n                \"attribute\": \"quantity\",\n                \"operator\": \"==\",\n                \"value\": 6,\n                \"created_at\": \"2025-01-29T15:30:00.000000Z\",\n                \"updated_at\": \"2025-01-29T15:30:00.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"campaign_id\": 2,\n                \"scope\": \"product\",\n                \"attribute\": \"category_id\",\n                \"operator\": \"==\",\n                \"value\": 2,\n                \"created_at\": \"2025-01-29T15:30:00.000000Z\",\n                \"updated_at\": \"2025-01-29T15:30:00.000000Z\"\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"name\": \"1000TL alışverişe %10 indirim.\",\n        \"description\": \"Toplam 1000TL ve üzerinde alışveriş yapan bir müşteri, siparişin tamamından %10 indirim kazanır.\",\n        \"start_at\": \"2025-01-05 00:00:00\",\n        \"end_at\": \"2025-02-05 23:59:59\",\n        \"discount_percent\": 10,\n        \"discount_amount\": 0,\n        \"campaign_type\": \"basic_percent\",\n        \"created_at\": \"2025-01-29T15:31:16.000000Z\",\n        \"updated_at\": \"2025-01-29T15:31:16.000000Z\",\n        \"campaign_rules\": [\n            {\n                \"id\": 4,\n                \"campaign_id\": 3,\n                \"scope\": \"order\",\n                \"attribute\": \"total\",\n                \"operator\": \">=\",\n                \"value\": 1000,\n                \"created_at\": \"2025-01-29T15:31:16.000000Z\",\n                \"updated_at\": \"2025-01-29T15:31:16.000000Z\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "getActiveCampaignsByOrder",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/campaigns/getActiveCampaignsByOrder/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"campaigns",
+								"getActiveCampaignsByOrder",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getActiveCampaignsByOrder",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/campaigns/getActiveCampaignsByOrder/3",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"campaigns",
+										"getActiveCampaignsByOrder",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.23.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 29 Jan 2025 17:55:55 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"orderId\": 3,\n    \"discounts\": [\n        {\n            \"discountReason\": \"Hırdavat Kategorisinden 2 veya daha fazla ürün al, en ucuzu %20 indirimli.\",\n            \"discountAmount\": 11.28,\n            \"subtotal\": 1263.9\n        },\n        {\n            \"discountReason\": \"1000TL alışverişe %10 indirim.\",\n            \"discountAmount\": 127.51800000000001,\n            \"subtotal\": 1136.382\n        }\n    ],\n    \"totalDiscount\": 138.798,\n    \"discountedTotal\": 1136.382\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "5|G3BneIUA8qw58qG8hVBp5KMXdk2dChQfGifAoY5j07a4b7ae",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "ideasoft2.test/api",
+			"type": "string"
+		}
+	]
+}
