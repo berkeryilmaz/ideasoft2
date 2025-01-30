@@ -22,17 +22,18 @@ class CampaignService
         return $campaign;
     }
 
-    public function createCampaign($data)
+    public function createCampaign($validatedCampaignData)
     {
         DB::beginTransaction();
         try {
-            $campaign = $this->insertCampaign($data);
-            $this->insertCampaignRules($data['rules'], $campaign);
+            $campaign = $this->insertCampaign($validatedCampaignData);
+            $campaign = $this->insertCampaignRules($validatedCampaignData['rules'], $campaign);
             DB::commit();
             return $campaign->load('campaignRules');
         } catch (\Exception $e) {
             DB::rollBack();
         }
+        return false;
     }
 
     public function getAllCampaigns()

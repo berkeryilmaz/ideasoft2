@@ -29,8 +29,8 @@ class CampaignController extends Controller
      */
     public function store(CampaignRequest $request)
     {
-        $validatedData = $request->validated();
-        return response()->json($this->campaignService->createCampaign($validatedData));
+        $validatedCampaignData = $request->validated();
+        return response()->json($this->campaignService->createCampaign($validatedCampaignData));
     }
 
     /**
