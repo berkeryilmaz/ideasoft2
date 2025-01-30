@@ -1,3 +1,122 @@
+# Kampanya Servisi - Laravel v11.40.0
+
+Bu proje, kampanyaları yönetmek için geliştirilmiş bir **Laravel v11.40.0** API servisidir. Kampanyaların oluşturulması, düzenlenmesi ve siparişlerle uyumluluğunun kontrol edilmesini sağlar.
+
+***
+
+## Proje Özeti
+
+* **Framework:**
+  Laravel v11.40.0
+* **Kimlik Doğrulama:**
+  Laravel Sanctum
+* **Validasyon:**
+  Request sınıfları (App\Http\Requests)
+* **İş süreçleri:**
+  Servis katmanı (App\Services)
+* **DTO Kullanımı:**
+  App\DTOs
+* **Harici Kütüphane:**
+  Yok
+* **Postman Koleksiyonu:**
+
+  `ideaSoft Case Campaign.postman_collection.json`
+
+**Not:**
+Bu servis, **önceki e-ticaret API’si ile aynı veritabanını kullanmaktadır**. Önce diğer projenin migrationları çalıştırılmalıdır.
+İhtiyaç halinde kampanyalar için ayrı bir veritabanı ile bağımsız bir servis olarak da çalıştırılabilir.
+
+***
+
+## Kullanım
+
+1. **Postman Koleksiyonu Ayarları**
+    * `ideaSoft Case Campaign.postman_collection.json`
+      dosyasını Postman'e aktarın.
+    * Koleksiyon değişkenlerinden
+      `BASE_URL`
+      değerini API sunucunuzun URL’si ile değiştirin.
+2. **Kimlik Doğrulama**
+
+   Kampanya API’si için
+   **Bearer Token**
+   , diğer e-ticaret API’sindeki giriş işlemi sonucunda alınan token ile sağlanmalıdır.
+
+***
+
+## Kampanya İşlemleri
+
+**Kampanyalar için CRUD İşlemleri:**
+
+* **Create (Oluşturma)**
+* **Read (Okuma)**
+* **Delete (Silme)**
+
+Her kampanya için:
+
+* **Başlangıç & Bitiş Tarihi**
+* **İndirim Miktarı & Oranı**
+* **Kampanya Tipi**
+* **Kampanya Kuralları**
+
+belirlenir.
+
+ **Kampanya Tipi** → Kampanyanın nasıl çalışacağını belirler ve **indirim miktarını hesaplar**.
+
+ **Kampanya Kuralları** → `scope`, `attribute`, `operator`, `value` alanları ile belirlenir.
+
+Örnek:
+Kocaeli'deki müşteriler için 1000 TL üzeri siparişlerde %10 indirim
+
+* **Kural 1:**
+
+  `scope=customer`
+  ,
+  `attribute=city`
+  ,
+  `operator=="=="`
+  ,
+  `value="kocaeli"`
+* **Kural 2:**
+
+  `scope=order`
+  ,
+  `attribute=total`
+  ,
+  `operator=">="`
+  ,
+  `value=1000`
+
+📍 **İlgili sınıflar:**
+
+* Kampanya yönetimi →
+  `App\Services\Campaign\CampaignFactory`
+* Kampanya kural işlemleri →
+  `App\Services\CampaignRule\CampaignRuleFactory`
+
+***
+
+## Kampanya - Sipariş Uyumluluğu
+
+Kampanya hesaplamaları için:
+
+**Endpoint:**
+`GET {{BASE_URL}}/campaigns/getActiveCampaignsByOrder/{{order_id}}`
+İlgili sipariş için **uygun kampanyalar hesaplanır**.
+
+***
+
+⚠ **Not:**
+Bu proje için **yaklaşım şekli daha önemli olduğundan**, kuralların mutlak doğrulukta çalıştığını kontrol edilmedi.
+
+Daha fazla detay için proje kodlarını inceleyebilirsiniz.
+
+
+
+
+
+---
+---
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
